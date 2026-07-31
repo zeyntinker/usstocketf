@@ -1,0 +1,8 @@
+# Local runtime and downloaded market data
+.venv/
+cache/
+__pycache__/
+*.py[cod]
+
+# Streamlit local state
+.streamlit/secrets.toml

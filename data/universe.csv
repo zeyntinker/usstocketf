@@ -1,0 +1,43 @@
+sector,ticker,etf_name,official_source
+Aerospace & Defense,ITA,iShares U.S. Aerospace & Defense ETF,https://www.ishares.com/us/products/239502/ishares-us-aerospace-defense-etf
+Agriculture,DBA,Invesco DB Agriculture Fund,https://www.invesco.com/us/financial-products/etfs/product-detail?audienceType=Investor&ticker=DBA
+Artificial Intelligence,AIQ,Global X Artificial Intelligence & Technology ETF,https://www.globalxetfs.com/funds/aiq
+Airlines,JETS,U.S. Global Jets ETF,https://www.usglobaletfs.com/jets
+Banking,KBE,SPDR S&P Bank ETF,https://www.ssga.com/us/en/intermediary/etfs/spdr-sp-bank-etf-kbe
+Basic Materials,XLB,Materials Select Sector SPDR Fund,https://www.ssga.com/us/en/intermediary/etfs/the-materials-select-sector-spdr-fund-xlb
+Biotechnology,XBI,SPDR S&P Biotech ETF,https://www.ssga.com/us/en/intermediary/etfs/spdr-sp-biotech-etf-xbi
+Building Products,PKB,Invesco Building & Construction ETF,https://www.invesco.com/us/financial-products/etfs/product-detail?audienceType=Investor&ticker=PKB
+Clean Energy,ICLN,iShares Global Clean Energy ETF,https://www.ishares.com/us/products/239738/ishares-global-clean-energy-etf
+Cloud Computing,SKYY,First Trust Cloud Computing ETF,https://www.ftportfolios.com/Retail/Etf/EtfSummary.aspx?Ticker=SKYY
+Commodities,DBC,Invesco DB Commodity Index Tracking Fund,https://www.invesco.com/us/financial-products/etfs/product-detail?audienceType=Investor&ticker=DBC
+Consumer Discretionary,XLY,Consumer Discretionary Select Sector SPDR Fund,https://www.ssga.com/us/en/intermediary/etfs/the-consumer-discretionary-select-sector-spdr-fund-xly
+Consumer Staples,XLP,Consumer Staples Select Sector SPDR Fund,https://www.ssga.com/us/en/intermediary/etfs/the-consumer-staples-select-sector-spdr-fund-xlp
+Crypto & Digital Payments,BLOK,Amplify Transformational Data Sharing ETF,https://amplifyetfs.com/blok
+Electric Vehicles,KARS,KraneShares Electric Vehicles & Future Mobility ETF,https://kraneshares.com/kars/
+Energy,XLE,Energy Select Sector SPDR Fund,https://www.ssga.com/us/en/intermediary/etfs/the-energy-select-sector-spdr-fund-xle
+eSports,ESPO,VanEck Video Gaming and eSports ETF,https://www.vaneck.com/us/en/investments/video-gaming-esports-etf-espo/
+Financials,XLF,Financial Select Sector SPDR Fund,https://www.ssga.com/us/en/intermediary/etfs/the-financial-select-sector-spdr-fund-xlf
+Food & Beverage,PBJ,Invesco Food & Beverage ETF,https://www.invesco.com/us/financial-products/etfs/product-detail?audienceType=Investor&ticker=PBJ
+Home Builders,ITB,iShares U.S. Home Construction ETF,https://www.ishares.com/us/products/239538/ishares-us-home-construction-etf
+Industrials,XLI,Industrial Select Sector SPDR Fund,https://www.ssga.com/us/en/intermediary/etfs/the-industrial-select-sector-spdr-fund-xli
+Infrastructure,PAVE,Global X U.S. Infrastructure Development ETF,https://www.globalxetfs.com/funds/pave
+Insurance,KIE,SPDR S&P Insurance ETF,https://www.ssga.com/us/en/intermediary/etfs/spdr-sp-insurance-etf-kie
+Leisure & Entertainment,PEJ,Invesco Leisure and Entertainment ETF,https://www.invesco.com/us/financial-products/etfs/product-detail?audienceType=Investor&ticker=PEJ
+Lithium,LIT,Global X Lithium & Battery Tech ETF,https://www.globalxetfs.com/funds/lit
+Medical Devices,IHI,iShares U.S. Medical Devices ETF,https://www.ishares.com/us/products/239511/ishares-us-medical-devices-etf
+Mining & Metals,XME,SPDR S&P Metals & Mining ETF,https://www.ssga.com/us/en/intermediary/etfs/spdr-sp-metals-and-mining-etf-xme
+Natural Gas,FCG,First Trust Natural Gas ETF,https://www.ftportfolios.com/Retail/Etf/EtfSummary.aspx?Ticker=FCG
+Nuclear & Uranium,URA,Global X Uranium ETF,https://www.globalxetfs.com/funds/ura
+Pharmaceuticals,PPH,VanEck Pharmaceutical ETF,https://www.vaneck.com/us/en/investments/pharmaceutical-etf-pph/
+Quantum Computing,QTUM,Defiance Quantum ETF,https://www.defianceetfs.com/qtum/
+Real Estate,IYR,iShares U.S. Real Estate ETF,https://www.ishares.com/us/products/239520/ishares-us-real-estate-etf
+Retail,XRT,SPDR S&P Retail ETF,https://www.ssga.com/us/en/intermediary/etfs/spdr-sp-retail-etf-xrt
+Semiconductors,SOXX,iShares Semiconductor ETF,https://www.ishares.com/us/products/239705/ishares-semiconductor-etf
+Shipping,BOAT,SonicShares Global Shipping ETF,https://sonicshares.com/boat/
+Software,IGV,iShares Expanded Tech-Software Sector ETF,https://www.ishares.com/us/products/239771/ishares-north-american-techsoftware-etf
+Solar Energy,TAN,Invesco Solar ETF,https://www.invesco.com/us/financial-products/etfs/product-detail?audienceType=Investor&ticker=TAN
+Steel,SLX,VanEck Steel ETF,https://www.vaneck.com/us/en/investments/steel-etf-slx/
+Telecommunications,IYZ,iShares U.S. Telecommunications ETF,https://www.ishares.com/us/products/239774/ishares-us-telecommunications-etf
+Timber,WOOD,iShares Global Timber & Forestry ETF,https://www.ishares.com/us/products/239753/ishares-s-p-global-timber-forestry-index-fund
+Transportation,IYT,iShares Transportation Average ETF,https://www.ishares.com/us/products/239713/ishares-transportation-average-etf
+Utilities,XLU,Utilities Select Sector SPDR Fund,https://www.ssga.com/us/en/intermediary/etfs/the-utilities-select-sector-spdr-fund-xlu
