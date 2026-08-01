@@ -2,7 +2,7 @@ sector,ticker,etf_name,official_source
 Aerospace & Defense,ITA,iShares U.S. Aerospace & Defense ETF,https://www.ishares.com/us/products/239502/ishares-us-aerospace-defense-etf
 Agriculture,DBA,Invesco DB Agriculture Fund,https://www.invesco.com/us/financial-products/etfs/product-detail?audienceType=Investor&ticker=DBA
 Artificial Intelligence,AIQ,Global X Artificial Intelligence & Technology ETF,https://www.globalxetfs.com/funds/aiq
-Airlines,JETS,U.S. Global Jets ETF,https://www.usglobaletfs.com/jets
+Airlines,JETS,U.S. Global Jets ETF,https://usglobaletfs.com/fund/u-s-global-jets-etf/
 Banking,KBE,SPDR S&P Bank ETF,https://www.ssga.com/us/en/intermediary/etfs/spdr-sp-bank-etf-kbe
 Basic Materials,XLB,Materials Select Sector SPDR Fund,https://www.ssga.com/us/en/intermediary/etfs/the-materials-select-sector-spdr-fund-xlb
 Biotechnology,XBI,SPDR S&P Biotech ETF,https://www.ssga.com/us/en/intermediary/etfs/spdr-sp-biotech-etf-xbi

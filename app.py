@@ -8,6 +8,8 @@ import plotly.graph_objects as go
 import streamlit as st
 
 from services.holdings import get_holdings
+from services.discovery import search_sector_etfs, verified_official_source
+from services.overlap import overlap_report
 from services.prices import load_prices
 from services.ranking import LOOKBACKS, composite_ranking, ranked_frame, resolve_dates, returns_between, returns_lookback
 
@@ -174,6 +176,66 @@ def main() -> None:
     except RuntimeError as exc:
         st.error(str(exc))
         st.link_button("운용사 공식 holdings 페이지 열기", row.official_source)
+
+    st.divider()
+    st.subheader(f"{row.sector} 관련 ETF 탐색 및 교집합")
+    st.caption("Yahoo Finance는 ETF 후보 탐색에만 사용합니다. holdings와 교집합은 공식 운용사 원본을 읽는 데 성공한 ETF만 사용합니다.")
+    search_key = f"related_candidates_{selected_ticker}"
+    if st.button("관련 ETF 검색", key=f"search_{selected_ticker}"):
+        try:
+            with st.spinner("Yahoo Finance에서 ETF 후보를 검색하는 중입니다…"):
+                st.session_state[search_key] = search_sector_etfs(row.sector)
+        except Exception as exc:
+            st.error(f"ETF 후보 검색 실패: {exc}")
+
+    candidates = st.session_state.get(search_key)
+    if candidates is not None and not candidates.empty:
+        if selected_ticker not in candidates["ticker"].tolist():
+            candidates = pd.concat([pd.DataFrame([{
+                "ticker": selected_ticker, "etf_name": row.etf_name, "exchange": "fixed universe",
+            }]), candidates], ignore_index=True)
+        known_sources = universe.set_index("ticker")["official_source"].to_dict()
+        verified_sources = {ticker: verified_official_source(ticker) for ticker in candidates["ticker"]}
+        known_sources.update({ticker: source for ticker, source in verified_sources.items() if source})
+        candidates = candidates.copy()
+        candidates["official_source"] = candidates["ticker"].map(known_sources).fillna("")
+        st.dataframe(candidates.rename(columns={"ticker": "ETF", "etf_name": "ETF 이름", "exchange": "거래소", "official_source": "확인된 공식 URL"}), use_container_width=True, hide_index=True)
+        default_compare = [selected_ticker] if selected_ticker in candidates["ticker"].tolist() else []
+        compare_tickers = st.multiselect("교집합을 계산할 ETF", candidates["ticker"].tolist(), default=default_compare, key=f"compare_{selected_ticker}")
+        official_sources: dict[str, str] = {}
+        for ticker in compare_tickers:
+            preset = known_sources.get(ticker, "")
+            official_sources[ticker] = st.text_input(f"{ticker} 공식 holdings URL", value=preset, key=f"source_{selected_ticker}_{ticker}")
+        if st.button("선택 ETF 공식 holdings 갱신 및 교집합 계산", key=f"overlap_{selected_ticker}"):
+            collected: dict[str, pd.DataFrame] = {}
+            statuses = []
+            for ticker in compare_tickers:
+                source = official_sources[ticker].strip()
+                if not source:
+                    statuses.append({"ETF": ticker, "상태": "제외", "사유": "공식 holdings URL이 확인되지 않았습니다."})
+                    continue
+                try:
+                    frame, meta, stale = get_holdings(ticker, source, refresh=True)
+                    collected[ticker] = frame
+                    statuses.append({"ETF": ticker, "상태": "캐시" if stale else "성공", "사유": meta.get("as_of", "기준일 없음")})
+                except RuntimeError as exc:
+                    statuses.append({"ETF": ticker, "상태": "제외", "사유": str(exc)})
+            st.session_state[f"overlap_result_{selected_ticker}"] = (collected, statuses)
+
+        result = st.session_state.get(f"overlap_result_{selected_ticker}")
+        if result:
+            collected, statuses = result
+            st.markdown("#### 공식 holdings 수집 상태")
+            st.dataframe(pd.DataFrame(statuses), use_container_width=True, hide_index=True)
+            common, matrix = overlap_report(collected)
+            st.markdown("#### 모든 선택 ETF의 공통 보유종목")
+            if common.empty:
+                st.info("공식 holdings 수집에 성공한 ETF들 사이에 공통 종목이 없거나, 비교 가능한 ETF가 2개 미만입니다.")
+            else:
+                st.dataframe(common, use_container_width=True, hide_index=True)
+            if not matrix.empty:
+                st.markdown("#### ETF 쌍별 공통 종목 수")
+                st.dataframe(matrix, use_container_width=True)
 
 
 if __name__ == "__main__":
