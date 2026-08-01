@@ -3,6 +3,26 @@
 cache/
 __pycache__/
 *.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
 
-# Streamlit local state
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.*
+secrets.*
 .streamlit/secrets.toml
+
+# Local editor, OS, and logs
+.vscode/
+.idea/
+*.log
+*.lnk
+Thumbs.db
+.DS_Store
